@@ -9,6 +9,7 @@ import SubmitRecipe from './SubmitRecipe';
 import Recipes from './Recipes';
 import Users from './Users';
 import { useState } from 'react';
+import Home from './Home';
 
 function App() {
   const usersMap = new Map(JSON.parse(localStorage.getItem('users')))
@@ -105,6 +106,9 @@ function App() {
           </Route>
           <Route exact path="/users">
             <Users loggedInUser={loggedInUser} users={users} onEditUser={onEditUser} onDeleteUser={onDeleteUser} />
+          </Route>
+          <Route exact path="/">
+            <Home />
           </Route>
         </Switch>
       </Container>

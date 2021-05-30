@@ -11,10 +11,10 @@ function NavBar({loggedInUser, handleSignOut}) {
                     <IconButton edge="start" color="inherit" aria-label="menu">
                         <Typography variant="h4">Cooking Recipes</Typography>
                     </IconButton>
-                    {loggedInUser ? null : <Button component={Link} color="inherit" to={'/sign-up'}>Sign Up</Button>}
-                    {loggedInUser ? null : <Button component={Link} color="inherit" to={'/sign-in'}>Sign In</Button>}
-                    {loggedInUser ? <Button component={Link} color="inherit" to={'/recipes'}>Recipes</Button> : null}
-                    {loggedInUser && loggedInUser.role === true ? <Button component={Link} color="inherit" to={'/users'}>Users</Button> : null }
+                    {loggedInUser ? null : <Button size="large" style={{textTransform: 'none'}} component={Link} color="inherit" to={'/sign-up'}>Sign Up</Button>}
+                    {loggedInUser ? null : <Button size="large" style={{textTransform: 'none'}} component={Link} color="inherit" to={'/sign-in'}>Sign In</Button>}
+                    {loggedInUser ? <Button size="large" style={{textTransform: 'none'}} component={Link} color="inherit" to={'/recipes'}>Recipes</Button> : null}
+                    {loggedInUser && loggedInUser.role === true ? <Button size="large" style={{textTransform: 'none'}} component={Link} color="inherit" to={'/users'}>Users</Button> : null }
                     {loggedInUser ? <Greeting user={loggedInUser} handleSignOut={handleSignOut}/> : null }
                 </Toolbar>
             </AppBar>

@@ -27,7 +27,7 @@ const Recipes = ({users, loggedInUser, recipes, onEditRecipe, onDeleteRecipe}) =
         if (!recent) {
             return recipes
         }
-        const recentRecipes = recipes.slice().sort((r1, r2) => new Date(r2.sharedOn) - new Date(r1.sharedOn))
+        const recentRecipes = recipes.slice().sort((r1, r2) => new Date(r2.lastModifiedOn) - new Date(r1.lastModifiedOn))
         return recentRecipes.splice(0, 10)
     }
 
@@ -64,7 +64,7 @@ const Recipes = ({users, loggedInUser, recipes, onEditRecipe, onDeleteRecipe}) =
                 />
             </Grid>
             <Grid item xl>
-                <Button component={Link} to={'/submit-recipe'} variant="contained" color="primary">
+                <Button size="large" style={{textTransform: 'none'}} component={Link} to={'/submit-recipe'} variant="contained" color="primary">
                     <AddIcon/>Submit Recipe
                 </Button>
             </Grid>

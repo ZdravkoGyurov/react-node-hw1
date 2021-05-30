@@ -4,6 +4,8 @@ import EditIcon from '@material-ui/icons/Edit';
 import { useFormik } from "formik";
 import React, { useState } from "react";
 import * as yup from 'yup';
+import SupervisorAccountIcon from '@material-ui/icons/SupervisorAccount';
+import { UserStatus } from './model/user.model'
 
 const validationSchema = yup.object({
     name: yup
@@ -70,16 +72,27 @@ const User = ({user, onEditUser, onDeleteUser}) => {
                     <Avatar src={user.avatarUrl !== '' ? user.avatarUrl : (user.gender === 'male' ? "https://i.pinimg.com/236x/9d/28/cf/9d28cf409109a2092e07c8873ed9444a.jpg" : "https://i.pinimg.com/474x/c1/15/45/c11545a6bcd91a8a9c817201e69b1e32.jpg") } />
                 </ListItemAvatar>
                 <ListItemText
-                    primary={user.name + " (" + user.username + ")"}
+                    primary={
+                        <React.Fragment>
+                            <Typography
+                                component="span"
+                                variant="body1"
+                                color="textPrimary"
+                                >
+                                {user.name + " (" + user.username + ")"}
+                                {user.role ? <SupervisorAccountIcon fontSize="small"></SupervisorAccountIcon> : null }
+                            </Typography>
+                        </React.Fragment>
+                    }
                     secondary={
                         <React.Fragment>
-                        <Typography
-                            component="span"
-                            variant="body2"
-                            color="textPrimary"
+                            <Typography
+                                component="span"
+                                variant="body2"
+                                color="textPrimary"
                             >
-                            {user.description} / {Boolean(user.role).toString()} / {user.status}
-                        </Typography>
+                                [{UserStatus[user.status]}] {user.description}
+                            </Typography>
                         </React.Fragment>
                     }
                 />
