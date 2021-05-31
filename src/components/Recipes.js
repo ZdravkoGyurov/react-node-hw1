@@ -20,7 +20,8 @@ const Recipes = ({users, loggedInUser, recipes, onEditRecipe, onDeleteRecipe}) =
         const postedBy = users.filter(u => u.id === recipe.userId)[0]
         return recipe.name.toLowerCase().includes(searchText.toLowerCase()) ||
                 recipe.tags.toLowerCase().includes(searchText.toLowerCase()) ||
-                (postedBy && postedBy.name.toLowerCase().includes(searchText.toLowerCase()))
+                (postedBy && postedBy.name.toLowerCase().includes(searchText.toLowerCase())) ||
+                (postedBy && postedBy.username.toLowerCase().includes(searchText.toLowerCase()))
     }
 
     const filterRecent = (recipes) => {
