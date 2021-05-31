@@ -44,12 +44,13 @@ function App() {
   }
 
   const onAddUser = (user) => {
-    if (!usersMap.has(user.username)) {
-      const newUsers = users.concat(user)
-      setUsers(newUsers)
-      usersMap.set(user.username, user)
-      window.localStorage.setItem('users', JSON.stringify(Array.from(usersMap)));
+    if (usersMap.has(user.username)) {
+      throw Error("User with the same username already exists")
     }
+    const newUsers = users.concat(user)
+    setUsers(newUsers)
+    usersMap.set(user.username, user)
+    window.localStorage.setItem('users', JSON.stringify(Array.from(usersMap)));
   }
 
   const onEditUser = (username, user) => {

@@ -83,8 +83,12 @@ export default function SignUp({loggedInUser, onAddUser}) {
     validationSchema: validationSchema,
     onSubmit: (values) => {
       const user = new User(values.name, values.username, values.password, gender, isAdmin, values.avatarUrl, values.description)
-      onAddUser(user)
-      history.push('/sign-in')
+      try {
+        onAddUser(user)
+        history.push('/sign-in')
+      } catch (e) {
+        alert(e.message)
+      }
     },
   });
   
