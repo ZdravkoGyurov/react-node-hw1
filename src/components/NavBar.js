@@ -1,9 +1,8 @@
 import { AppBar, Button, IconButton, Toolbar, Typography } from "@material-ui/core";
 import { Link } from "react-router-dom";
-import Greeting from "./Greeting";
+import Greeting from "./NavGreeting";
 
 function NavBar({loggedInUser, handleSignOut}) {
-
     return (
         <div>
             <AppBar position="static" color="primary">

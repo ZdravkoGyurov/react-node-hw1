@@ -7,7 +7,7 @@ import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import { InputAdornment } from '@material-ui/core';
-import Recipe from './model/recipe.model'
+import Recipe from '../model/recipe.model'
 import * as yup from 'yup';
 import { useFormik } from 'formik';
 import { useHistory } from "react-router-dom";

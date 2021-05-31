@@ -1,15 +1,15 @@
 import './App.css';
-import NavBar from './NavBar';
+import NavBar from './components/NavBar';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { Route, Switch } from 'react-router-dom';
-import SignUp from './SignUp';
-import SignIn from './SignIn';
+import SignUp from './components/SignUp';
+import SignIn from './components/SignIn';
 import { Container } from '@material-ui/core';
-import SubmitRecipe from './SubmitRecipe';
-import Recipes from './Recipes';
-import Users from './Users';
+import SubmitRecipe from './components/SubmitRecipe';
+import Recipes from './components/Recipes';
+import Users from './components/Users';
 import { useState } from 'react';
-import Home from './Home';
+import Home from './components/Home';
 
 function App() {
   const usersMap = new Map(JSON.parse(localStorage.getItem('users')))

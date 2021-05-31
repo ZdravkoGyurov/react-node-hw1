@@ -13,7 +13,7 @@ import Container from '@material-ui/core/Container';
 import { Link as RouteLink, useHistory } from "react-router-dom";
 import { Checkbox, FormControl, FormControlLabel, Radio, RadioGroup } from '@material-ui/core';
 import { useState } from 'react';
-import { User } from './model/user.model';
+import { User } from '../model/user.model';
 import { useFormik } from 'formik';
 
 const useStyles = makeStyles((theme) => ({
